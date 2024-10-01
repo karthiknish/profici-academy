@@ -312,9 +312,9 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white  p-6 rounded-lg shadow-md">
                 <p className="italic mb-4">
-                  "Profici Academy gave me the practical skills and confidence
-                  to land my dream job in digital marketing. The hands-on
-                  experience was invaluable."
+                  &apos;Profici Academy gave me the practical skills and
+                  confidence to land my dream job in digital marketing. The
+                  hands-on experience was invaluable.&apos;
                 </p>
                 <p className="font-semibold">
                   - Sarah J., Social Media Specialist
@@ -322,9 +322,9 @@ export default function Home() {
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <p className="italic mb-4">
-                  "The mentorship I received at Profici was game-changing. I now
-                  run my own successful digital marketing agency thanks to the
-                  skills I learned here."
+                  &apos;The mentorship I received at Profici was game-changing.
+                  I now run my own successful digital marketing agency thanks to
+                  the skills I learned here.&apos;
                 </p>
                 <p className="font-semibold">- Michael T., Agency Founder</p>
               </div>
