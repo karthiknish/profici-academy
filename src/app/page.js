@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { HeroHighlight, Highlight } from "../components/ui/hero-highlight";
 import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { WobbleCard } from "@/components/ui/wobble-card";
@@ -90,6 +91,8 @@ const ReviewCard = ({ img, name, username, body }) => {
 };
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div className="flex flex-col min-h-screen font-[family-name:var(--font-geist-sans)]">
       <motion.header
@@ -98,8 +101,8 @@ export default function Home() {
         transition={{ duration: 0.5 }}
         className="border-b border-gray-200 py-4"
       >
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center p-2 rounded-lg">
+        <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+          <div className="flex items-center p-2 rounded-lg mb-4 md:mb-0">
             <Link href="https://profici.co.uk">
               <Image
                 src="https://profici.co.uk/wp-content/themes/proficinew/assets/images/Proficiblack.svg"
@@ -109,17 +112,42 @@ export default function Home() {
               />
             </Link>
           </div>
-          <nav>
-            <ul className="flex space-x-4">
+          <nav className="w-full md:w-auto">
+            <div className="md:hidden">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="text-gray-700 hover:text-gray-900 focus:outline-none"
+              >
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              </button>
+            </div>
+            <ul
+              className={`flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 items-center ${
+                mobileMenuOpen ? "block" : "hidden"
+              } md:flex`}
+            >
               <li>
                 <a
                   href="#about"
-                  className="text-gray-700 hover:text-gray-900 hover:underline"
+                  className="text-gray-700 hover:text-gray-900 hover:underline block py-2 md:py-0"
                   onClick={(e) => {
                     e.preventDefault();
                     document
                       .querySelector("#about")
                       .scrollIntoView({ behavior: "smooth" });
+                    setMobileMenuOpen(false);
                   }}
                 >
                   About
@@ -128,12 +156,13 @@ export default function Home() {
               <li>
                 <a
                   href="#programs"
-                  className="text-gray-700 hover:text-gray-900 hover:underline"
+                  className="text-gray-700 hover:text-gray-900 hover:underline block py-2 md:py-0"
                   onClick={(e) => {
                     e.preventDefault();
                     document
                       .querySelector("#programs")
                       .scrollIntoView({ behavior: "smooth" });
+                    setMobileMenuOpen(false);
                   }}
                 >
                   Programs
@@ -142,12 +171,13 @@ export default function Home() {
               <li>
                 <a
                   href="#testimonials"
-                  className="text-gray-700 hover:text-gray-900 hover:underline"
+                  className="text-gray-700 hover:text-gray-900 hover:underline block py-2 md:py-0"
                   onClick={(e) => {
                     e.preventDefault();
                     document
                       .querySelector("#testimonials")
                       .scrollIntoView({ behavior: "smooth" });
+                    setMobileMenuOpen(false);
                   }}
                 >
                   Testimonials
@@ -156,12 +186,13 @@ export default function Home() {
               <li>
                 <a
                   href="#apply"
-                  className="text-gray-700 hover:text-gray-900 hover:underline"
+                  className="text-gray-700 hover:text-gray-900 hover:underline block py-2 md:py-0"
                   onClick={(e) => {
                     e.preventDefault();
                     document
                       .querySelector("#apply")
                       .scrollIntoView({ behavior: "smooth" });
+                    setMobileMenuOpen(false);
                   }}
                 >
                   Apply
@@ -194,12 +225,12 @@ export default function Home() {
                   duration: 0.5,
                   ease: [0.4, 0.0, 0.2, 1],
                 }}
-                className="text-2xl px-4 md:text-4xl lg:text-5xl font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto"
+                className="text-2xl px-4 md:text-4xl lg:text-5xl cursor-pointer font-bold text-neutral-700 dark:text-white max-w-4xl leading-relaxed lg:leading-snug text-center mx-auto"
               >
                 Kickstart your career with Profici Digital Marketing Academy.
                 <br />
                 Our program offers <br />
-                <Highlight className="text-black dark:text-white">
+                <Highlight className="text-black cursor-pointer dark:text-white">
                   Hands-on experience, Expert mentorship, and Real-world skills.
                 </Highlight>
               </motion.h1>
