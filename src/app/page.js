@@ -349,8 +349,8 @@ export default function Home() {
                     Social Media Marketing
                   </h3>
                   <p className="mb-4 text-left italic border-l-4 border-indigo-500 pl-4">
-                    "Master the art of engaging audiences across various social
-                    platforms with Profici&apos;s expertise."
+                    &ldquo;Master the art of engaging audiences across various
+                    social platforms with Profici&apos;s expertise.&rdquo;
                   </p>
                 </div>
                 <ul className="list-none space-y-4 mt-auto">
@@ -376,8 +376,8 @@ export default function Home() {
                     Website Development
                   </h3>
                   <p className="mb-4 text-left italic border-l-4 border-indigo-500 pl-4">
-                    "Learn to create stunning, functional websites that engage
-                    users and drive business growth."
+                    &ldquo;Learn to create stunning, functional websites that
+                    engage users and drive business growth.&rdquo;
                   </p>
                 </div>
                 <ul className="list-none space-y-4 mt-auto">
@@ -405,9 +405,9 @@ export default function Home() {
                     Pay-Per-Click (PPC)
                   </h3>
                   <p className="mb-4 text-left italic border-l-4 border-indigo-500 pl-4">
-                    "Master the art of PPC advertising to drive targeted
+                    &ldquo;Master the art of PPC advertising to drive targeted
                     traffic, maximize ROI, and achieve your marketing goals
-                    effectively."
+                    effectively.&rdquo;
                   </p>
                 </div>
                 <ul className="list-none space-y-4 mt-auto">
