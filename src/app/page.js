@@ -7,7 +7,7 @@ import { CardSpotlight } from "@/components/ui/card-spotlight";
 import { WobbleCard } from "@/components/ui/wobble-card";
 import Marquee from "@/components/ui/marquee";
 import { cn } from "@/lib/utils";
-
+import Link from "next/link";
 const reviews = [
   {
     name: "Sarah J.",
@@ -99,13 +99,15 @@ export default function Home() {
         className="border-b border-gray-200 py-4"
       >
         <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center">
-            <Image
-              src="https://profici.co.uk/wp-content/themes/proficinew/assets/images/Proficiblack.svg"
-              alt="Profici Logo"
-              width={120}
-              height={40}
-            />
+          <div className="flex items-center p-2 rounded-lg">
+            <Link href="https://profici.co.uk">
+              <Image
+                src="https://profici.co.uk/wp-content/themes/proficinew/assets/images/Proficiblack.svg"
+                alt="Profici Logo"
+                width={120}
+                height={40}
+              />
+            </Link>
           </div>
           <nav>
             <ul className="flex space-x-4">
@@ -113,6 +115,12 @@ export default function Home() {
                 <a
                   href="#about"
                   className="text-gray-700 hover:text-gray-900 hover:underline"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .querySelector("#about")
+                      .scrollIntoView({ behavior: "smooth" });
+                  }}
                 >
                   About
                 </a>
@@ -121,6 +129,12 @@ export default function Home() {
                 <a
                   href="#programs"
                   className="text-gray-700 hover:text-gray-900 hover:underline"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .querySelector("#programs")
+                      .scrollIntoView({ behavior: "smooth" });
+                  }}
                 >
                   Programs
                 </a>
@@ -129,6 +143,12 @@ export default function Home() {
                 <a
                   href="#testimonials"
                   className="text-gray-700 hover:text-gray-900 hover:underline"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .querySelector("#testimonials")
+                      .scrollIntoView({ behavior: "smooth" });
+                  }}
                 >
                   Testimonials
                 </a>
@@ -137,6 +157,12 @@ export default function Home() {
                 <a
                   href="#apply"
                   className="text-gray-700 hover:text-gray-900 hover:underline"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document
+                      .querySelector("#apply")
+                      .scrollIntoView({ behavior: "smooth" });
+                  }}
                 >
                   Apply
                 </a>
@@ -428,9 +454,9 @@ export default function Home() {
                       <span className="font-medium">Community management</span>
                     </li>
                     <li className="flex items-center text-left bg-gradient-to-r from-purple-50 to-transparent p-2 rounded-lg h-20">
-                      <span className="mr-3 text-3xl">📊</span>
+                      <span className="mr-3 text-3xl">🔍</span>
                       <span className="font-medium">
-                        Social media analytics
+                        Social media trend analysis
                       </span>
                     </li>
                   </ul>
